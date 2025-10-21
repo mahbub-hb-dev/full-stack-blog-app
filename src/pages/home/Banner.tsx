@@ -1,6 +1,7 @@
 import { BackgroundPattern } from "@/components/ui/background-pattern";
 import { Button } from "@/components/ui/button";
 import { ArrowUpRight, CirclePlay } from "lucide-react";
+import { Link } from "react-router";
 
 const Banner = () => {
   return (
@@ -18,15 +19,17 @@ const Banner = () => {
           easy-to-implement examples.
         </p>
         <div className="mt-12 flex items-center justify-center gap-4">
-          <Button size="lg" className="rounded-full text-base">
-            Get Started <ArrowUpRight className="h-5! w-5!" />
+          <Button asChild size="lg" className="rounded-full text-base">
+            <Link to={"/"}>
+              Latest Blogs <ArrowUpRight className="h-5! w-5!" />
+            </Link>
           </Button>
           <Button
             variant="outline"
             size="lg"
             className="rounded-full text-base shadow-none"
           >
-            <CirclePlay className="h-5! w-5!" /> Watch Demo
+            <CirclePlay className="h-5! w-5!" /> Hire me now
           </Button>
         </div>
       </div>

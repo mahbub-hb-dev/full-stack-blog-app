@@ -3,7 +3,7 @@ import { Link } from "react-router"
 
 const MainMenu = () => {
   return (
-    <ul className="flex gap-x-4">
+    <ul className="flex gap-x-6">
         <li> <Link to="/"> Home </Link> </li>
         <li> <Link to="/blogs"> Blogs </Link> </li>
         <li> <Link to="/contact"> Contact </Link> </li>

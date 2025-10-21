@@ -1,34 +1,14 @@
-import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList } from '@/components/ui/navigation-menu'
-import { Link } from 'react-router-dom'
+import { Link } from "react-router"
+
 
 const MainMenu = () => {
   return (
-    <div>
-        <NavigationMenu>
-            <NavigationMenuList className="gap-3 space-x-0 data-[orientation=vertical]:flex-col data-[orientation=vertical]:items-start data-[orientation=vertical]:justify-start">
-                <NavigationMenuItem>
-                    <NavigationMenuLink asChild>
-                    <Link to="#">Home</Link>
-                    </NavigationMenuLink>
-                </NavigationMenuItem>
-                <NavigationMenuItem>
-                    <NavigationMenuLink asChild>
-                    <Link to="#">Blog</Link>
-                    </NavigationMenuLink>
-                </NavigationMenuItem>
-                <NavigationMenuItem>
-                    <NavigationMenuLink asChild>
-                    <Link to="#">About</Link>
-                    </NavigationMenuLink>
-                </NavigationMenuItem>
-                <NavigationMenuItem>
-                    <NavigationMenuLink asChild>
-                    <Link to="#">Contact Us</Link>
-                    </NavigationMenuLink>
-                </NavigationMenuItem>
-            </NavigationMenuList>
-        </NavigationMenu>
-    </div>
+    <ul className="flex gap-x-4">
+        <li> <Link to="/"> Home </Link> </li>
+        <li> <Link to="/blogs"> Blogs </Link> </li>
+        <li> <Link to="/contact"> Contact </Link> </li>
+        <li> <Link to="/about"> About </Link> </li>
+    </ul>
   )
 }
 

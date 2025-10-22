@@ -1,11 +1,13 @@
 import { Badge } from "@/components/ui/badge";
-import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import {
   BadgeDollarSign,
   Bike,
   BookHeart,
   BriefcaseBusiness,
   Calendar,
+  ChevronRight,
   ClockIcon,
   Cpu,
   FlaskRound,
@@ -60,43 +62,33 @@ const MainSection = () => {
   return (
     <div className="max-w-(--breakpoint-xl) mx-auto py-10 lg:py-16 px-6 xl:px-0 flex flex-col lg:flex-row items-start gap-12">
       <div>
-        <div className="space-y-12">
-          {[0, 1, 2, 3, 4, 5, 6, 7].map((i) => (
-            <Card
-              key={i}
-              className="flex flex-col sm:flex-row sm:items-center shadow-none overflow-hidden rounded-md border-none py-0"
-            >
-              <div className="shrink-0 aspect-video grow sm:w-56 sm:aspect-square bg-muted rounded-lg" />
-              <CardContent className="px-0 sm:px-6 py-0 flex flex-col">
-                <div className="flex items-center gap-6">
-                  <Badge className="bg-primary/5 text-primary hover:bg-primary/5 shadow-none">
-                    Technology
-                  </Badge>
-                </div>
-
-                <h3 className="mt-4 text-2xl font-semibold tracking-tight">
-                  A beginner&apos;s guide to blackchain for engineers
-                </h3>
-                <p className="mt-2 text-muted-foreground line-clamp-3 text-ellipsis">
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa
-                  consequatur minus dicta accusantium quos, ratione suscipit id
-                  adipisci voluptatibus. Nulla sint repudiandae fugiat tenetur
-                  dolores.
-                </p>
-                <div className="mt-4 flex items-center gap-6 text-muted-foreground text-sm font-medium">
-                  <div className="flex items-center gap-2">
-                    <ClockIcon className="h-4 w-4" /> 5 min read
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Calendar className="h-4 w-4" /> Nov 20, 2024
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+        <div className="mt-4 grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
+        {[0, 1, 2, 3, 4, 5, 6, 7].map((i) => (
+          <Card key={i} className="shadow-none overflow-hidden rounded-md py-0">
+            <CardHeader className="p-0">
+              <div className="aspect-video bg-muted w-full border-b" />
+            </CardHeader>
+            <CardContent className="pb-6">
+              <div className="flex items-center gap-3">
+                <Badge className="bg-primary/5 text-primary hover:bg-primary/5 shadow-none">
+                  Technology
+                </Badge>
+                <span className="font-medium text-xs text-muted-foreground">
+                  5 min read
+                </span>
+              </div>
+              <h3 className="mt-4 text-[1.35rem] font-semibold tracking-tight">
+                A beginner&apos;s guide to blackchain for engineers
+              </h3>
+              <Button size="sm" className="mt-6 shadow-none">
+                Read more <ChevronRight />
+              </Button>
+            </CardContent>
+          </Card>
+        ))}
       </div>
-      <aside className="sticky top-8 shrink-0 lg:max-w-sm w-full">
+      </div>
+      <aside className="sticky top-8 shrink-0 lg:max-w-[220px] w-full">
         <h3 className="text-xl font-semibold tracking-tight">Categories</h3>
         <div className="mt-4 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-1 gap-2">
           {categories.map((category) => (

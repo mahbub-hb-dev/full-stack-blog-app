@@ -1,13 +1,32 @@
 import { Link } from "react-router"
 
+const menus = [
+  {
+    id : 1, 
+    link : "/",
+    label : "Home"
+  },
+  {
+    id : 2, 
+    link : "/about",
+    label : "About"
+  },
+  {
+    id : 3, 
+    link : "/blogs",
+    label : "Blogs"
+  },
+  {
+    id : 1, 
+    link : "/contact",
+    label : "Contact"
+  },
+]
 
 const MainMenu = () => {
   return (
     <ul className="flex gap-x-6">
-        <li> <Link to="/"> Home </Link> </li>
-        <li> <Link to="/blogs"> Blogs </Link> </li>
-        <li> <Link to="/contact"> Contact </Link> </li>
-        <li> <Link to="/about"> About </Link> </li>
+      {menus.map((menu)=> (<li key={menu.id}> <Link to={menu.link}> {menu.label} </Link> </li>))}
     </ul>
   )
 }

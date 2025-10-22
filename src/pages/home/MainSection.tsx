@@ -14,6 +14,7 @@ import {
   HeartPulse,
   Scale,
 } from "lucide-react";
+import { Link } from "react-router";
 
 const categories = [
   {
@@ -62,6 +63,7 @@ const MainSection = () => {
   return (
     <div className="max-w-(--breakpoint-xl) mx-auto py-10 lg:py-16 px-6 xl:px-0 flex flex-col lg:flex-row items-start gap-12">
       <div>
+        <h3 className="text-center lg:text-left text-2xl font-semibold"> Our Blogs </h3>
         <div className="mt-4 grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
         {[0, 1, 2, 3, 4, 5, 6, 7].map((i) => (
           <Card key={i} className="shadow-none overflow-hidden rounded-md py-0">
@@ -80,8 +82,10 @@ const MainSection = () => {
               <h3 className="mt-4 text-[1.35rem] font-semibold tracking-tight">
                 A beginner&apos;s guide to blackchain for engineers
               </h3>
-              <Button size="sm" className="mt-6 shadow-none">
-                Read more <ChevronRight />
+              <Button asChild size="sm" className="mt-6 shadow-none">
+                <Link to="/single-blog/abc">
+                  Read more <ChevronRight />
+                </Link>
               </Button>
             </CardContent>
           </Card>
